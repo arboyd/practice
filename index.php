@@ -21,16 +21,19 @@ echo "<p>Hey look it's my address: $address</p>" ;
      ); 
 
  
- echo "<br><h3>look at all these dead Victorians</h3>";
+ echo "<br><h3>look at all these dead Victorians</h3><p>";
  
  foreach($authorDeaths as $author => $deathYear) {
-     echo "<p>$author died in $deathYear</p>" ;
+     echo "$author died in $deathYear<br>" ;
  };
+ 
+ echo "</p>";
  
 ?>
 
-<!-- input any name and quest. if your color does not have whitespace in it, it will be used as the bg color. Otherwise, you blow up. 
-(used whitespace as a really hacky indicator of hesitancy) Currently does not "quest" for anything so sue me. -->
+<!-- input any name and quest. if your color does not have whitespace in it (used whitespace as a really hacky indicator of hesitancy),
+check to see if it is a hex code or CSS-recognized color. Then it will be used as the bg color. Otherwise, you blow up. 
+Currently does not  use "quest" for anything so sue me. -->
 
 <form method = "post" action="two.php">
     <p><h2>What is your name?</h2>

@@ -4,7 +4,7 @@ $name = ($_POST['name']);
 $quest = ($_POST['quest']);
 $color = ($_POST['color']);
 
-//array of css color 
+//array of css colors 
 $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", 
 "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", 
 "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGreen", "DarkKhaki", 
@@ -21,6 +21,7 @@ $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "
  "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "Snow", 
  "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"); 
 
+ 
 //check if space in color or blank
 if (!(preg_match("/\s/",$color)) && (!empty($color))) {
         //check if hex code
@@ -32,11 +33,14 @@ if (!(preg_match("/\s/",$color)) && (!empty($color))) {
         elseif (sizeOf((preg_grep("/$color/i", $csscolors))) > 0 ){
              echo "<h1 style = \"background-color:$color\" >Hi, $name. Good luck on your quest!</h1>";   
         }
+        //maybe you can't spell?
         else {
             echo "<h1>Are you sure that's a real color, $name?</h1>";
         }
         
     }
+    
+ //asplode
 else {
        echo "<img src =\"http://media.tumblr.com/tumblr_lb6rv7IJtR1qbqqbp.gif\">";
    }
