@@ -17,6 +17,7 @@ $color = ($_GET['color']);
 //no whitespacespace color
 $colorNS = preg_replace('/\s+/', '', $color);
 
+
 //array of css colors 
 $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", 
 "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", 
@@ -37,7 +38,9 @@ $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "
  
 
 //check if hex code, does not account for possible # but whatever
-if ((preg_match("/^[a-f0-9]{3}$/i", $colorNS)) || (preg_match("/^[a-f0-9]{6}$/i", $colorNS))) {            
+// oh wait now it does
+if (((preg_match("/^[a-f0-9]{3}$/i", $colorNS)) || (preg_match("/^[a-f0-9]{6}$/i", $colorNS))) ||
+    ((preg_match("/^#[a-f0-9]{3}$/i", $colorNS)) || (preg_match("/^#[a-f0-9]{6}$/i", $colorNS)))) {            
            
            echo "<h1 style = \"background-color:$colorNS\" >Good luck on your quest, nerd!</h1>";
             
@@ -45,15 +48,15 @@ if ((preg_match("/^[a-f0-9]{3}$/i", $colorNS)) || (preg_match("/^[a-f0-9]{6}$/i"
 //check if named color in CSS using space-stripped color name (case insensitive)
 elseif (sizeOf((preg_grep("/^$colorNS$/i", $csscolors))) > 0 ){
             
-            echo "<h1 style = \"background-color:$colorNS\" >Halloo, $name. Good luck on your quest!</h1>";   
+        echo "<h1 style = \"background-color:$colorNS\" >Halloo, $name. Good luck on your quest!</h1>";   
 }
 //checks if you have nothing/whitespace -- if so, you asplode
 elseif ((preg_match("/\s/",$color)) || (empty($color))) {
 
-       echo "<img src =\"http://media.tumblr.com/tumblr_lb6rv7IJtR1qbqqbp.gif\">";
+        echo "<img src =\"http://media.tumblr.com/tumblr_lb6rv7IJtR1qbqqbp.gif\">";
  
 }
-//maybe you can't spell? -- if there is something typed but neither hex nor css color
+//maybe you can't spell? -- if there is something typed but neither hex nor css color nor whitespacey
 else {
    
    echo "<h1>Are you sure that's a real color, $name?</h1>";
