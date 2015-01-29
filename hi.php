@@ -1,6 +1,12 @@
 <?php
 
-$name = ($_POST['name']);
+//Solution to blank name 
+if (!empty(($_POST['name']))){
+    $name = ($_POST['name']);
+} else {
+    $name = "good Sir Knight";
+}    
+  
 $quest = ($_POST['quest']);
 $color = ($_POST['color']);
 
@@ -26,12 +32,12 @@ $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "
 if (!(preg_match("/\s/",$color)) && (!empty($color))) {
         //check if hex code
         if ((preg_match("/^[a-f0-9]{3}$/i", $color)) || (preg_match("/^[a-f0-9]{6}$/i", $color))) {            
-           echo "<h1 style = \"background-color:$color\" >Hi, $name. Good luck on your quest, nerd!</h1>";
+           echo "<h1 style = \"background-color:$color\" >Good luck on your quest, nerd!</h1>";
             
         } 
         //check if named color
         elseif (sizeOf((preg_grep("/^$color$/i", $csscolors))) > 0 ){
-             echo "<h1 style = \"background-color:$color\" >Hi, $name. Good luck on your quest!</h1>";   
+             echo "<h1 style = \"background-color:$color\" >Halloo, $name. Good luck on your quest!</h1>";   
         }
         //maybe you can't spell?
         else {
