@@ -35,7 +35,7 @@ echo "<p>Hey look it's my address: $address</p>" ;
 check to see if it is a hex code or CSS-recognized color. Then it will be used as the bg color. Otherwise, you blow up. 
 Currently does not  use "quest" for anything so sue me. -->
 
-<form method = "post" action="two.php">
+<form method = "post" action="hi.php">
     <p><h2>What is your name?</h2>
     <input type="text" name="name" value="">
     </p>

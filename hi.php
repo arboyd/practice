@@ -25,12 +25,12 @@ $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "
 //check if space in color or blank
 if (!(preg_match("/\s/",$color)) && (!empty($color))) {
         //check if hex code
-        if ((preg_match("/[a-f0-9]{3}/i", $color)) || (preg_match("/[a-f0-9]{6}/i", $color))) {            
+        if ((preg_match("/^[a-f0-9]{3}$/i", $color)) || (preg_match("/^[a-f0-9]{6}$/i", $color))) {            
            echo "<h1 style = \"background-color:$color\" >Hi, $name. Good luck on your quest, nerd!</h1>";
             
         } 
         //check if named color
-        elseif (sizeOf((preg_grep("/$color/i", $csscolors))) > 0 ){
+        elseif (sizeOf((preg_grep("/^$color$/i", $csscolors))) > 0 ){
              echo "<h1 style = \"background-color:$color\" >Hi, $name. Good luck on your quest!</h1>";   
         }
         //maybe you can't spell?
