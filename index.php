@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+<meta charset="UTF-8">
 <head>
 
-<title>PHP practice woo</title> 
+<title>PHP practice ¯\_(ツ)_/¯</title> 
 </head>
 
 <body>
 
 <?php 
 
+//exercise one
 $address = "1612 Center Avenue"; 
 echo "<p>Hey look it's my address: $address</p>" ;
 
-
- $authorDeaths = array(
+//exercise two
+$authorDeaths = array(
     "Charles Dickens" => "1870",
     "William Thackeray" => "1863",
     "Anthony Trollope" => "1882",
@@ -21,7 +23,7 @@ echo "<p>Hey look it's my address: $address</p>" ;
      ); 
 
  
- echo "<br><h3>look at all these dead Victorians</h3><p>";
+ echo "<br><h3>Look at all these dead Victorians :(</h3><p>";
  
  foreach($authorDeaths as $author => $deathYear) {
      echo "$author died in $deathYear<br>" ;
@@ -31,9 +33,16 @@ echo "<p>Hey look it's my address: $address</p>" ;
  
 ?>
 
-<!-- input any name and quest. if your color does not have whitespace in it (used whitespace as a really hacky indicator of hesitancy),
-check to see if it is a hex code or CSS-recognized color. Then it will be used as the bg color. Otherwise, you blow up. 
-Currently does not  use "quest" for anything so sue me. -->
+
+<!-- 
+
+exercise three
+
+input any name and quest. if your color does not have whitespace in it, check to see if it is a hex code or CSS-recognized color. 
+Then it will be used as the bg color. (Used whitespace as a really hacky indicator of hesitancy/changeableness, which a la 
+Monty Python ends in destruction.) Currently does not  use "quest" for anything; so sue me. 
+
+-->
 
 <form method = "get" action="hi.php">
     <p><h2>What is your name?</h2>
