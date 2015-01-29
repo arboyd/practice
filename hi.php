@@ -1,14 +1,14 @@
 <?php
 
 //Solution to blank name 
-if (!empty(($_POST['name']))){
-    $name = ($_POST['name']);
+if (!empty(($_GET['name']))){
+    $name = ($_GET['name']);
 } else {
     $name = "good Sir Knight";
 }    
   
-$quest = ($_POST['quest']);
-$color = ($_POST['color']);
+$quest = ($_GET['quest']);
+$color = ($_GET['color']);
 
 //array of css colors 
 $csscolors = array("AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", 
@@ -53,8 +53,3 @@ else {
 
 ?>
 
-
-<!--
-
-
--->
